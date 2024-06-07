@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect } from 'react';
+import {  StatusBar } from "react-native";
+import { SignIn } from './src/screens/Signin';
+import { useFonts } from 'expo-font'
+import { Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter'
+import { Rajdhani_500Medium, Rajdhani_700Bold } from '@expo-google-fonts/rajdhani'
+import * as SplashScreen from 'expo-splash-screen';
+
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+  const [ fontsLoaded ] = useFonts({
+    Inter_400Regular,
+    Inter_500Medium,
+    Rajdhani_500Medium,
+    Rajdhani_700Bold
+  })
+
+  useEffect(() => {
+    if (fontsLoaded) {
+      SplashScreen.hideAsync();
+
+    }
+  }, [fontsLoaded] )
+
+  if (!fontsLoaded) {
+    return null
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar translucent barStyle="light-content"  backgroundColor="transparent"  />
+      <SignIn />
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
