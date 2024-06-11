@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 import { styles } from "./style";
 import { Profile } from "../../components/Profile";
 import { Avatar } from "../../components/Avatar";
+import { ButtonAdd } from "../../components/ButtonAdd";
 
 export function Home() {
   return (
@@ -10,6 +11,7 @@ export function Home() {
       <View style={styles.header}>
     
         <Profile></Profile>
+        <ButtonAdd ></ButtonAdd>
       </View>
     </View>
   );

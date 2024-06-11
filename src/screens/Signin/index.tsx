@@ -3,14 +3,19 @@ import { styles } from "./style";
 import { useState } from "react";
 import imagem from "../../assets/cerebro.jpg"
 import { ButtonIcon } from "../../components/ButtonIcon";
+import { useNavigation } from "@react-navigation/native";
 
 
 export function SignIn() {
     // estados armazenam valores e a interface reage a mudança desse estado
     const [ text, setText ] = useState('')
+    const navigation = useNavigation()
 
     function onChangeText(texto: string) {
         setText(texto)
+    }
+    function handleSignIn() {
+        navigation.navigate("Home")
     }
 
     return(
@@ -28,7 +33,7 @@ export function SignIn() {
                   com seus amigos
                 </Text>
 
-                <ButtonIcon activeOpacity={0.9}  titulo="Entrar com Discord"></ButtonIcon>
+                <ButtonIcon onPress={handleSignIn} activeOpacity={0.9}  titulo="Entrar com Discord"></ButtonIcon>
             </View>
         </View>
     )
