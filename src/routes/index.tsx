@@ -2,6 +2,7 @@ import React from "react";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 
 import { AuthRoutes } from "./auth.routes";
+import { theme } from "../global/styles/theme";
 
 export function Routes() {
 
@@ -9,7 +10,7 @@ export function Routes() {
         ...DefaultTheme,
         colors: {
             ...DefaultTheme.colors,
-            background: 'transparent'
+            background: theme.colors.secondary100
         }
     }
   return (
