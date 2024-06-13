@@ -9,10 +9,12 @@ export const styles = StyleSheet.create({
         borderRadius: 8,
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'center',
         marginBottom: 24
     },
     titule: {
         flex: 1,
+        fontFamily: theme.fonts.inter_500,
         color: theme.colors.white,
         textAlign: 'center'
     },
