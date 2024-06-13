@@ -5,6 +5,7 @@ import { Home } from "../screens/Home";
 import { SignIn } from "../screens/Signin";
 import { Background } from "../components/BackGround";
 import { Details } from "../screens/Details";
+import { CreateAgendamento } from "../screens/CreateAgendamento";
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ export function AuthRoutes() {
       <Stack.Screen name="SignIn" component={SignIn}></Stack.Screen>
       <Stack.Screen name="Home" component={Home}></Stack.Screen>
       <Stack.Screen name="Details" component={ Details}></Stack.Screen>
+      <Stack.Screen name="Create" component={ CreateAgendamento}></Stack.Screen>
     </Stack.Navigator>
   );
 }
